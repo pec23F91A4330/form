@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FizzBuzz</title>
+</head>
+<body>
+  <h1>FizzBuzz Output</h1>
+  <button onclick="runFizzBuzz()">Show FizzBuzz</button>
+  <div id="output"></div>
+
+  <script>
+    function runFizzBuzz() {
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = ""; // Clear previous output
+
+      for (let i = 1; i <= 100; i++) {
+        let text = "";
+
+        if (i % 3 === 0 && i % 5 === 0) {
+          text = "FizzBuzz";
+        } else if (i % 3 === 0) {
+          text = "Fizz";
+        } else if (i % 5 === 0) {
+          text = "Buzz";
+        } else {
+          text = i;
+        }
+
+        const p = document.createElement("p");
+        p.textContent = text;
+        outputDiv.appendChild(p);
+      }
+    }
+  </script>
+</body>
+</html>
